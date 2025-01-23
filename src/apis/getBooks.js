@@ -3,26 +3,18 @@ export default async function getBooks(
   query,
   genres = "",
   bookType = "",
-  languages = [],
+  languages = "",
   order = "relevance",
   startIndex = 0
 ) {
+  const finalquery = `https://www.googleapis.com/books/v1/volumes?q=${query}${
+    genres && genres !== "none" ? `+subject:${genres}` : ""
+  }&startIndex=${startIndex}&maxResults=10${
+    languages ? `&langRestrict=${languages}` : ""
+  }&orderBy=${order}${bookType ? "&filter=" + bookType : ""}`;
+
   try {
-    const response = await axios.get(
-      `https://www.googleapis.com/books/v1/volumes?q=${query}${
-        genres ? ` subject:${genres}` : ""
-      }&startIndex=${startIndex}&maxResults=10${
-        languages ? `&langRestrict=${languages}` : ""
-      }&orderBy=${order}`
-    );
-    console.log(query, genres, languages, order, startIndex);
-    console.log(
-      `https://www.googleapis.com/books/v1/volumes?q=${query}${
-        genres ? ` subject:${genres}` : ""
-      }&startIndex=${startIndex}&maxResults=10${
-        languages ? `&langRestrict=${languages}` : ""
-      }&orderBy=${order}`
-    );
+    const response = await axios.get(finalquery);
 
     return {
       items: response.data.items,

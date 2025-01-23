@@ -9,8 +9,11 @@ nav{
 .infoText{
 
   color: white;
-  padding-left: 44%;
-  margin-top: 50px;
+  display: flex;
+  justify-content: center;  /* Aligns horizontally */
+  align-items: center;      /* Aligns vertically */
+  height: 90vh;  
+
 }
 
 .searchBar{
@@ -35,8 +38,24 @@ nav{
     transition: transform 0.3s ease; /* Transition for the scaling effect */
   }
 
+@media (max-width: 1000px){
+  .row{
+    height: 600px;
+  }
+}
+  /* Custom collapse transition */
+/* Initially hide the filter panel */
+.filter-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease; /* Smooth transition */
+}
 
-  
+/* When the filter panel is visible */
+.filter-panel.show {
+  max-height: 700px; /* Adjust this value based on the content's height */
+}
+
   .card:hover {
     transform: scale(1.05); /* Slightly scale the card */
   }

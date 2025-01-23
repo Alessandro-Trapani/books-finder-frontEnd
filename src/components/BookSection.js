@@ -20,14 +20,20 @@ export default function BookSection({ searchQuery, filters }) {
     hasNextPage,
     isFetchingNextPage,
   } = useInfiniteQuery({
-    queryKey: ["books", searchQuery],
+    queryKey: ["books", searchQuery, filters],
     queryFn: ({ pageParam = 0 }) =>
-      getBooks(searchQuery, "", "", filters.language, "relevance", pageParam),
+      getBooks(
+        searchQuery,
+        filters.genres,
+        filters.bookType,
+        filters.language,
+        "relevance",
+        pageParam
+      ),
     getNextPageParam: (lastPage, allPages) => {
-      // Determine next page (adjust based on your API response)
       return lastPage?.nextPageToken || undefined;
     },
-    enabled: !!searchQuery,
+    enabled: !!searchQuery, // Ensures the query runs only when there is a search query
   });
 
   const observer = useRef();
@@ -47,9 +53,9 @@ export default function BookSection({ searchQuery, filters }) {
 
   if (isLoading) {
     return (
-      <div class="d-flex justify-content-center">
-        <div class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );
@@ -60,35 +66,46 @@ export default function BookSection({ searchQuery, filters }) {
   }
 
   if (searchQuery === "") {
-    return <div className="text-light infoText">Search for books</div>;
+    return <div className="infoText text-light ">Search for books</div>;
   }
-  if (!data) {
-    return <div className="text-ligh infoTextt">No books found</div>;
+
+  if (!data || !Array.isArray(data.pages) || data.pages[0].items === null) {
+    return <div className="text-light infoText">No books found</div>;
   }
+
   return (
     <div>
       <ul className="books-list">
-        {data.pages.map((page, pageIndex) =>
-          page.items.map((book, bookIndex) => {
+        {data.pages.map((page, pageIndex) => {
+          if (!Array.isArray(page.items) || page.items.length === 0) {
+            return <div className="text-light infoText">No books found</div>; // If no items, skip this page
+          }
+
+          return page.items.map((book, bookIndex) => {
             const isLastItem =
               pageIndex === data.pages.length - 1 &&
               bookIndex === page.items.length - 1;
 
             return (
               <OverlayTrigger
+                key={book.id}
                 placement="bottom"
-                overlay={renderTooltip("", book.volumeInfo.language)}
+                overlay={renderTooltip(
+                  "",
+                  book.accessInfo.viewability +
+                    " " +
+                    book.saleInfo.isEbook +
+                    " " +
+                    book.saleInfo.saleability +
+                    " " +
+                    book.volumeInfo.language
+                )}
               >
                 <div
-                  className="card "
-                  key={book.id}
+                  className="card"
                   ref={isLastItem ? lastBookRef : null} // Attach ref to the last item
                 >
                   <img
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="top"
-                    data-bs-custom-class="custom-tooltip"
-                    data-bs-title="This top tooltip is themed via CSS variables."
                     src={book.volumeInfo.imageLinks?.thumbnail || coverNotFound}
                     className="card-img"
                     alt={book.volumeInfo.title || "Book cover"}
@@ -96,8 +113,8 @@ export default function BookSection({ searchQuery, filters }) {
                 </div>
               </OverlayTrigger>
             );
-          })
-        )}
+          });
+        })}
       </ul>
       {isFetchingNextPage && <div>Loading more...</div>}
     </div>
