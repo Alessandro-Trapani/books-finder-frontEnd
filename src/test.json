@@ -1,0 +1,185 @@
+{
+    "kind": "books#volume",
+    "id": "9CJWTbd-RYoC",
+    "etag": "YjLqmmyu4eg",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/9CJWTbd-RYoC",
+    "volumeInfo": {
+      "title": "Harry Potter e la Pietra Filosofale",
+      "authors": [
+        "J.K. Rowling"
+      ],
+      "publisher": "Pottermore Publishing",
+      "publishedDate": "2015-12-08",
+      "description": "Harry Potter è un ragazzo normale, o quantomeno è convinto di esserlo, anche se a volte provoca strani fenomeni, come farsi ricrescere i capelli inesorabilmente tagliati dai perfidi zii. Vive con loro al numero 4 di Privet Drive: una strada di periferia come tante, dove non succede mai nulla fuori dall’ordinario. Finché un giorno, poco prima del suo undicesimo compleanno, riceve una misteriosa lettera che gli rivela la sua vera natura: Harry è un mago e la Scuola di Magia e Stregoneria di Hogwarts è pronta ad accoglierlo...",
+      "readingModes": {
+        "text": true,
+        "image": true
+      },
+      "maturityRating": "NOT_MATURE",
+      "allowAnonLogging": true,
+      "contentVersion": "1.15.18.0.preview.3",
+      "panelizationSummary": {
+        "containsEpubBubbles": false,
+        "containsImageBubbles": false
+      },
+      "imageLinks": {
+        "smallThumbnail": "http://books.google.com/books/content?id=9CJWTbd-RYoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=9CJWTbd-RYoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      "previewLink": "http://books.google.it/books?id=9CJWTbd-RYoC&printsec=frontcover&dq=harry-potter&hl=&cd=1&source=gbs_api",
+      "infoLink": "https://play.google.com/store/books/details?id=9CJWTbd-RYoC&source=gbs_api",
+      "canonicalVolumeLink": "https://play.google.com/store/books/details?id=9CJWTbd-RYoC"
+    },
+    "saleInfo": {
+      "country": "IT",
+      "listPrice": {
+        "amount": 6.99,
+        "currencyCode": "EUR"
+      },
+      "retailPrice": {
+        "amount": 6.99,
+        "currencyCode": "EUR"
+      },
+      "buyLink": "https://play.google.com/store/books/details?id=9CJWTbd-RYoC&rdid=book-9CJWTbd-RYoC&rdot=1&source=gbs_api",
+      "offers": [
+        {
+          "finskyOfferType": 1,
+          "listPrice": {
+            "amountInMicros": 6990000,
+            "currencyCode": "EUR"
+          },
+          "retailPrice": {
+            "amountInMicros": 6990000,
+            "currencyCode": "EUR"
+          }
+        }
+      ]
+    },
+    "accessInfo": {
+      "country": "IT",
+      "epub": {
+        "isAvailable": true,
+        "acsTokenLink": "http://books.google.it/books/download/Harry_Potter_e_la_Pietra_Filosofale-sample-epub.acsm?id=9CJWTbd-RYoC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+      },
+      "pdf": {
+        "isAvailable": true,
+        "acsTokenLink": "http://books.google.it/books/download/Harry_Potter_e_la_Pietra_Filosofale-sample-pdf.acsm?id=9CJWTbd-RYoC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+      },
+      "accessViewStatus": "SAMPLE"
+    },
+    "searchInfo": {
+      "textSnippet": "Harry Potter è un ragazzo normale, o quantomeno è convinto di esserlo, anche se a volte provoca strani fenomeni, come farsi ricrescere i capelli inesorabilmente tagliati dai perfidi zii."
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  {
+    "kind": "books#volume",
+    "id": "9CJWTbd-RYoC",
+    "etag": "aalAJwRHeRI",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/9CJWTbd-RYoC",
+    "volumeInfo": {
+      "title": "Harry Potter e la Pietra Filosofale",
+      "authors": [
+        "J.K. Rowling"
+      ],
+      "publisher": "Pottermore Publishing",
+      "publishedDate": "2015-12-08",
+      "description": "Harry Potter è un ragazzo normale, o quantomeno è convinto di esserlo, anche se a volte provoca strani fenomeni, come farsi ricrescere i capelli inesorabilmente tagliati dai perfidi zii. Vive con loro al numero 4 di Privet Drive: una strada di periferia come tante, dove non succede mai nulla fuori dall’ordinario. Finché un giorno, poco prima del suo undicesimo compleanno, riceve una misteriosa lettera che gli rivela la sua vera natura: Harry è un mago e la Scuola di Magia e Stregoneria di Hogwarts è pronta ad accoglierlo...",
+      "industryIdentifiers": [
+        {
+          "type": "ISBN_13",
+          "identifier": "9781781101582"
+        },
+        {
+          "type": "ISBN_10",
+          "identifier": "1781101582"
+        }
+      ],
+      "readingModes": {
+        "text": true,
+        "image": true
+      },
+      "pageCount": 344,
+      "printType": "BOOK",
+      "categories": [
+        "Juvenile Fiction"
+      ],
+      "averageRating": 4.5,
+      "ratingsCount": 62,
+      "maturityRating": "NOT_MATURE",
+      "allowAnonLogging": true,
+      "contentVersion": "1.15.18.0.preview.3",
+      "panelizationSummary": {
+        "containsEpubBubbles": false,
+        "containsImageBubbles": false
+      },
+      "imageLinks": {
+        "smallThumbnail": "http://books.google.com/books/content?id=9CJWTbd-RYoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=9CJWTbd-RYoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      "language": "it",
+      "previewLink": "http://books.google.it/books?id=9CJWTbd-RYoC&printsec=frontcover&dq=harry-potter&hl=&cd=1&source=gbs_api",
+      "infoLink": "https://play.google.com/store/books/details?id=9CJWTbd-RYoC&source=gbs_api",
+      "canonicalVolumeLink": "https://play.google.com/store/books/details?id=9CJWTbd-RYoC"
+    },
+    "saleInfo": {
+      "country": "IT",
+      "saleability": "FOR_SALE",
+      "isEbook": true,
+      "listPrice": {
+        "amount": 6.99,
+        "currencyCode": "EUR"
+      },
+      "retailPrice": {
+        "amount": 6.99,
+        "currencyCode": "EUR"
+      },
+      "buyLink": "https://play.google.com/store/books/details?id=9CJWTbd-RYoC&rdid=book-9CJWTbd-RYoC&rdot=1&source=gbs_api",
+      "offers": [
+        {
+          "finskyOfferType": 1,
+          "listPrice": {
+            "amountInMicros": 6990000,
+            "currencyCode": "EUR"
+          },
+          "retailPrice": {
+            "amountInMicros": 6990000,
+            "currencyCode": "EUR"
+          }
+        }
+      ]
+    },
+    "accessInfo": {
+      "country": "IT",
+      "viewability": "PARTIAL",
+      "embeddable": true,
+      "publicDomain": false,
+      "textToSpeechPermission": "ALLOWED",
+      "epub": {
+        "isAvailable": true,
+        "acsTokenLink": "http://books.google.it/books/download/Harry_Potter_e_la_Pietra_Filosofale-sample-epub.acsm?id=9CJWTbd-RYoC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+      },
+      "pdf": {
+        "isAvailable": true,
+        "acsTokenLink": "http://books.google.it/books/download/Harry_Potter_e_la_Pietra_Filosofale-sample-pdf.acsm?id=9CJWTbd-RYoC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+      },
+      "webReaderLink": "http://play.google.com/books/reader?id=9CJWTbd-RYoC&hl=&source=gbs_api",
+      "accessViewStatus": "SAMPLE",
+      "quoteSharingAllowed": false
+    },
+    "searchInfo": {
+      "textSnippet": "Harry Potter è un ragazzo normale, o quantomeno è convinto di esserlo, anche se a volte provoca strani fenomeni, come farsi ricrescere i capelli inesorabilmente tagliati dai perfidi zii."
+    }
+  }
