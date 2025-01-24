@@ -1,165 +1,165 @@
 body{
-    background-color: #242331;
+  background-color: #242331;
+  color: white;
 }
 
 nav{
-    border-bottom: 1px solid #555;
+  border-bottom: 1px solid #555;
+}
+
+.bookThumbnail{
+width: 100%;
+height : 100%;
 }
 
 .infoText{
 
-  color: white;
-  display: flex;
-  justify-content: center;  /* Aligns horizontally */
-  align-items: center;      /* Aligns vertically */
-  height: 90vh;  
+color: white;
+display: flex;
+justify-content: center;  
+align-items: center;      
+height: 90vh;  
 
 }
 
 .searchBar{
-    width: 30%;
-    border-radius: 30px;
-    margin-left: auto;
-    
+  width: 30%;
+  border-radius: 30px;
+  margin-left: auto;
+
 }
 
 .spinner-border{
-  margin-top: 200px;
-  color: white;
+margin-top: 200px;
+color: white;
 }
 
 .searchButton{
-    margin-right: auto;
+  margin-right: auto;
 }
 .card {
-    background-color: #242331;
-    border : none;
-    margin: 20px;
-    transition: transform 0.3s ease; /* Transition for the scaling effect */
-  }
+  background-color: #242331;
+  border : none;
+  margin: 20px;
+  transition: transform 0.3s ease; 
+}
 
 @media (max-width: 1000px){
-  .row{
-    height: 600px;
-  }
+.row{
+  height: 600px;
 }
-  /* Custom collapse transition */
-/* Initially hide the filter panel */
+}
+
 .filter-panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease; /* Smooth transition */
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.5s ease; 
 }
 
-/* When the filter panel is visible */
 .filter-panel.show {
-  max-height: 700px; /* Adjust this value based on the content's height */
+max-height: 700px; 
 }
 
-  .card:hover {
-    transform: scale(1.05); /* Slightly scale the card */
-  }
+.card:hover {
+  transform: scale(1.05); 
+}
 
 .books-list{
-    display:flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
- 
-   
+  display:flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
 }
 .card-text{
-    margin-top: 30px;
-   
-}
+  margin-top: 30px;
 
+}
 
 .card-img{
-    
-    background-color: red;
-    transition: background-color 1s ease; /* Smooth transition for the background color */
-  }
-  
-  .card-img-overlay .card-title, 
-  .card-img-overlay .card-text {
-    transition: opacity 0.5s ease; /* Smooth transition for the text */
 
-    font-size: calc(1vw + 0.2rem); /* Scales based on viewport width */
+  background-color: red;
+  transition: background-color 1s ease; 
+}
+
+.card-img-overlay .card-title, 
+.card-img-overlay .card-text {
+  transition: opacity 0.5s ease; 
+
+  font-size: calc(1vw + 0.2rem); 
 
 }
-  
-  .card-img-overlay:hover {
-    background-color: rgba(0, 0, 0, 0); 
-    
-  }
-  
-  .card-img-overlay:hover .card-title, 
-  .card-img-overlay:hover .card-text {
-    opacity: 0; /* Make the text fade out */
-  }
-  
+
+.card-img-overlay:hover {
+  background-color: rgba(0, 0, 0, 0); 
+
+}
+
+.card-img-overlay:hover .card-title, 
+.card-img-overlay:hover .card-text {
+  opacity: 0; 
+}
 
 .filters-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0px;
-  }
-  
-  .filters-container > div {
-    padding: 15px;
-    margin: 10px;
-    border-radius: 10px;
-    min-width: 150px; 
-    border: solid 1px #ccc;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px;
+}
+
+.filters-container > div {
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  min-width: 150px; 
+  border: solid 1px #ccc;
+}
+
 @media (max-width: 1120px) {
-    .card-img-overlay .card-title, 
-    .card-img-overlay .card-text {
-        font-size: calc(2.5vw);
-    }
+  .card-img-overlay .card-title, 
+  .card-img-overlay .card-text {
+      font-size: calc(2.5vw);
   }
-  
-  @media (max-width: 700px) {
-    .card-img-overlay .card-title, 
-    .card-img-overlay .card-text {
-        font-size: calc(5vw);
-    }
+}
 
+@media (max-width: 700px) {
+  .card-img-overlay .card-title, 
+  .card-img-overlay .card-text {
+      font-size: calc(5vw);
   }
 
-  .books-list {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-    gap: 30px; /* Add spacing between cards */
-    justify-content: center; /* Center the cards */
-  }
-  
+}
+
+.books-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 30px; 
+  justify-content: center; 
+}
+
+.card {
+
+  flex: 1 1 calc(15% - 20px); 
+  margin: 10px; 
+  transition: transform 0.3s ease; 
+  max-width: calc(25% - 20px); 
+
+}
+
+.card:hover {
+  transform: scale(1.05); 
+}
+
+@media (max-width: 1120px) {
   .card {
-    
-    flex: 1 1 calc(15% - 20px); /* 4 cards per row on desktop, adjust for gap */
-    margin: 10px; /* Space around cards */
-    transition: transform 0.3s ease; /* Transition for scaling effect */
-    max-width: calc(25% - 20px); /* Ensure consistent max-width */
-   
+    flex: 1 1 calc(50% - 20px); 
+    max-width: calc(50% - 20px); 
   }
-  
-  .card:hover {
-    transform: scale(1.05); /* Slightly scale the card */
+}
+
+@media (max-width: 700px) {
+  .card {
+    flex: 1 1 calc(100% - 20px); 
+    max-width: calc(100% - 20px); 
   }
-  
-  @media (max-width: 1120px) {
-    .card {
-      flex: 1 1 calc(50% - 20px); /* 2 cards per row on medium screens */
-      max-width: calc(50% - 20px); /* Ensure consistent max-width */
-    }
-  }
-  
-  @media (max-width: 700px) {
-    .card {
-      flex: 1 1 calc(100% - 20px); /* 1 card per row on mobile screens */
-      max-width: calc(100% - 20px); /* Take full width minus gap */
-    }
-  }
-  
+}

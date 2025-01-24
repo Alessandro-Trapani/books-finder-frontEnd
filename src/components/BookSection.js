@@ -2,15 +2,9 @@ import React, { useRef, useCallback } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import getBooks from "../apis/getBooks";
 import coverNotFound from "../assets/coverNotFound.jpg";
-import { Tooltip, OverlayTrigger } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 export default function BookSection({ searchQuery, filters }) {
-  const renderTooltip = (props, text) => (
-    <Tooltip id="button-tooltip" {...props}>
-      {text}
-    </Tooltip>
-  );
-
   const {
     data,
     isLoading,
@@ -33,8 +27,14 @@ export default function BookSection({ searchQuery, filters }) {
     getNextPageParam: (lastPage, allPages) => {
       return lastPage?.nextPageToken || undefined;
     },
-    enabled: !!searchQuery, // Ensures the query runs only when there is a search query
+    enabled: !!searchQuery,
   });
+
+  const navigate = useNavigate();
+
+  const handleCardClick = (bookId) => {
+    navigate(`/book/${bookId}`, { state: { bookId } });
+  };
 
   const observer = useRef();
   const lastBookRef = useCallback(
@@ -78,7 +78,7 @@ export default function BookSection({ searchQuery, filters }) {
       <ul className="books-list">
         {data.pages.map((page, pageIndex) => {
           if (!Array.isArray(page.items) || page.items.length === 0) {
-            return <div className="text-light infoText">No books found</div>; // If no items, skip this page
+            return <div className="text-light infoText">No books found</div>;
           }
 
           return page.items.map((book, bookIndex) => {
@@ -87,31 +87,17 @@ export default function BookSection({ searchQuery, filters }) {
               bookIndex === page.items.length - 1;
 
             return (
-              <OverlayTrigger
-                key={book.id}
-                placement="bottom"
-                overlay={renderTooltip(
-                  "",
-                  book.accessInfo.viewability +
-                    " " +
-                    book.saleInfo.isEbook +
-                    " " +
-                    book.saleInfo.saleability +
-                    " " +
-                    book.volumeInfo.language
-                )}
+              <div
+                className="card"
+                onClick={() => handleCardClick(book.id)}
+                ref={isLastItem ? lastBookRef : null}
               >
-                <div
-                  className="card"
-                  ref={isLastItem ? lastBookRef : null} // Attach ref to the last item
-                >
-                  <img
-                    src={book.volumeInfo.imageLinks?.thumbnail || coverNotFound}
-                    className="card-img"
-                    alt={book.volumeInfo.title || "Book cover"}
-                  />
-                </div>
-              </OverlayTrigger>
+                <img
+                  src={book.volumeInfo.imageLinks?.thumbnail || coverNotFound}
+                  className="card-img"
+                  alt={book.volumeInfo.title || "Book cover"}
+                />
+              </div>
             );
           });
         })}
