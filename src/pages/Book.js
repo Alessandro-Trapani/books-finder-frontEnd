@@ -118,10 +118,14 @@ const Book = () => {
           </p>
 
           {}
-          {book.volumeInfo.averageRating && (
+          {book.volumeInfo.averageRating ? (
             <p>
               <strong>Average Rating:</strong> {book.volumeInfo.averageRating} (
               {book.volumeInfo.ratingsCount || 0} ratings)
+            </p>
+          ) : (
+            <p>
+              <strong>No ratings available</strong>
             </p>
           )}
 

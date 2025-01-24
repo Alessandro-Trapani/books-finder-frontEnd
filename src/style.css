@@ -4,16 +4,13 @@ body{
 }
 
 nav{
-  border-bottom: 1px solid #555;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #242331;
 }
 
-.bookThumbnail{
-width: 100%;
-height : 100%;
-}
+
 
 .infoText{
-
 color: white;
 display: flex;
 justify-content: center;  
@@ -22,11 +19,28 @@ height: 90vh;
 
 }
 
+.filtersButton{
+  border-radius: 0;
+  border: none !important;
+  border-left: 1px solid #ccc !important;
+}
+
+.detective{
+  height: 6vh;
+  margin-right: auto;
+  
+}
+
+.detective:hover{
+  cursor: pointer;
+  height: 6vh;
+  margin-right: auto;
+}
+
 .searchBar{
   width: 30%;
-  border-radius: 30px;
+  border-radius: 10px;
   margin-left: auto;
-
 }
 
 .spinner-border{
@@ -34,9 +48,10 @@ margin-top: 200px;
 color: white;
 }
 
-.searchButton{
-  margin-right: auto;
-}
+
+
+
+
 .card {
   background-color: #242331;
   border : none;
@@ -44,11 +59,6 @@ color: white;
   transition: transform 0.3s ease; 
 }
 
-@media (max-width: 1000px){
-.row{
-  height: 600px;
-}
-}
 
 .filter-panel {
 max-height: 0;
@@ -57,48 +67,14 @@ transition: max-height 0.5s ease;
 }
 
 .filter-panel.show {
-max-height: 700px; 
+max-height: 1500px; 
 }
 
-.card:hover {
-  transform: scale(1.05); 
-}
 
-.books-list{
-  display:flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
 
-}
-.card-text{
-  margin-top: 30px;
 
-}
 
-.card-img{
 
-  background-color: red;
-  transition: background-color 1s ease; 
-}
-
-.card-img-overlay .card-title, 
-.card-img-overlay .card-text {
-  transition: opacity 0.5s ease; 
-
-  font-size: calc(1vw + 0.2rem); 
-
-}
-
-.card-img-overlay:hover {
-  background-color: rgba(0, 0, 0, 0); 
-
-}
-
-.card-img-overlay:hover .card-title, 
-.card-img-overlay:hover .card-text {
-  opacity: 0; 
-}
 
 .filters-container {
   display: flex;
@@ -114,20 +90,7 @@ max-height: 700px;
   border: solid 1px #ccc;
 }
 
-@media (max-width: 1120px) {
-  .card-img-overlay .card-title, 
-  .card-img-overlay .card-text {
-      font-size: calc(2.5vw);
-  }
-}
 
-@media (max-width: 700px) {
-  .card-img-overlay .card-title, 
-  .card-img-overlay .card-text {
-      font-size: calc(5vw);
-  }
-
-}
 
 .books-list {
   display: flex;
@@ -139,15 +102,20 @@ max-height: 700px;
 
 .card {
 
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+  padding: 15px;
   flex: 1 1 calc(15% - 20px); 
   margin: 10px; 
   transition: transform 0.3s ease; 
   max-width: calc(25% - 20px); 
 
 }
+.bookTitle{
+  margin-top: auto;
+}
 
 .card:hover {
-  transform: scale(1.05); 
+  transform: scale(1.10); 
 }
 
 @media (max-width: 1120px) {
@@ -159,7 +127,16 @@ max-height: 700px;
 
 @media (max-width: 700px) {
   .card {
-    flex: 1 1 calc(100% - 20px); 
-    max-width: calc(100% - 20px); 
+    flex: 1 1 calc(90% - 20px); 
+    max-width: calc(90% - 20px); 
   }
+  .subjectFilterContainer{
+  height: 100vh;
 }
+.filter-panel{
+  height: 160vh;
+}
+}
+
+
+

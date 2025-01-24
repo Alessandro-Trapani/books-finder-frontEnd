@@ -97,6 +97,11 @@ export default function BookSection({ searchQuery, filters }) {
                   className="card-img"
                   alt={book.volumeInfo.title || "Book cover"}
                 />
+                <strong className="text-light bookTitle">
+                  {book.volumeInfo.title.length > 50
+                    ? book.volumeInfo.title.substring(0, 50) + "..."
+                    : book.volumeInfo.title}
+                </strong>
               </div>
             );
           });
