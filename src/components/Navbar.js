@@ -61,7 +61,7 @@ export default function Navbar({ setSearchQuery, setFilters }) {
 
       {}
       <div className={`filter-panel ${filtersVisible ? "show" : ""}`}>
-        <div className="bg-dark p-4">
+        <div className="p-4">
           <h5 className=" h4">Filters:</h5>
           <div className="filters-container">
             {}
