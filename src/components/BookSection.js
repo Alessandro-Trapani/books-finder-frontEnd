@@ -1,7 +1,9 @@
-import React, { useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import getBooks from "../apis/getBooks";
+
 import coverNotFound from "../assets/coverNotFound.jpg";
+
 import { useNavigate } from "react-router-dom";
 
 export default function BookSection({ searchQuery, filters }) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import searchIcon from "../assets/detective.png";
+import LoginForm from "./LoginForm";
 
 export default function Navbar({ setSearchQuery, setFilters }) {
   const [query, setQuery] = useState("");
@@ -30,7 +31,7 @@ export default function Navbar({ setSearchQuery, setFilters }) {
   return (
     <div>
       {}
-      <nav className="navbar navbar-expand-lg navbar-dark sticky-top">
+      <nav className="navbar sticky-top">
         <div className="container-fluid">
           <a className="navbar-brand text-white" href="#">
             Book Finder
@@ -56,6 +57,37 @@ export default function Navbar({ setSearchQuery, setFilters }) {
           >
             {filtersVisible ? "Hide Filters" : "Show Filters"}
           </button>
+          <button
+            class="navbar-toggler d-block"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            className="offcanvas offcanvas-end"
+            tabIndex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div className="offcanvas-header">
+              <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
+                Login
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="offcanvas-body">
+              <LoginForm />
+            </div>
+          </div>
         </div>
       </nav>
 
