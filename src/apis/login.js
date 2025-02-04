@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function register(email, password) {
+export default async function login(email, password) {
   const url = "http://localhost:8080/api/v1/login";
 
   const requestBody = {

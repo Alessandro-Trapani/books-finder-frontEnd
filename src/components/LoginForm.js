@@ -2,6 +2,8 @@ import { useState } from "react";
 import register from "../apis/register";
 import login from "../apis/login";
 import Notification from "./Notification";
+import { jwtDecode } from "jwt-decode";
+import { useAuth } from "../hooks/AuthContext";
 
 function LoginForm() {
   const [formData, setFormData] = useState({
@@ -11,29 +13,62 @@ function LoginForm() {
     lastName: "",
   });
 
+  const { saveJwt } = useAuth();
+
   const [isRegistering, setIsRegistering] = useState(false);
+  const [notification, setNotification] = useState({ color: "", message: "" });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  const handleSubmit = (e) => {
+  var response = "";
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isRegistering) {
-      register(
-        formData.firstName,
-        formData.lastName,
-        formData.email,
-        formData.password
-      );
-    } else {
-      login(formData.email, formData.password);
+    try {
+      if (isRegistering) {
+        response = await register(
+          formData.firstName,
+          formData.lastName,
+          formData.email,
+          formData.password
+        );
+      } else {
+        response = await login(formData.email, formData.password);
+      }
+      const confirmation = response?.confirmation; // Get confirmation if available
+      const jwt = response?.jwt; // Get jwt if available
+
+      let message = confirmation || "Success!";
+      if (jwt) {
+        saveJwt(jwtDecode(jwt));
+        message = `Welcome ${jwtDecode(jwt).firstName}!`; // or whatever you want to show with JWT
+      }
+
+      setNotification({
+        color: "green",
+        message: message,
+      });
+      setIsRegistering(false);
+    } catch (error) {
+      setNotification({
+        color: "red",
+        message: error.response?.data?.error || "An error occurred",
+      });
     }
+  };
+  const handleDismiss = () => {
+    setNotification({ color: "", message: "" });
   };
 
   return (
     <>
-      <Notification color="red" message="hello" show={true} />
+      {notification.message && (
+        <Notification
+          color={notification.color}
+          message={notification.message}
+          onDismiss={handleDismiss}
+        />
+      )}
 
       <div className="d-flex justify-content-center align-items-center ">
         <form onSubmit={handleSubmit}>

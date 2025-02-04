@@ -17,7 +17,7 @@ export default async function register(firstName, lastName, email, password) {
         "Content-Type": "application/json",
       },
     });
-    console.log("API Response:", response.data);
+    console.log("API Response:", response.data.jwt);
     return response.data;
   } catch (error) {
     if (error.response) {

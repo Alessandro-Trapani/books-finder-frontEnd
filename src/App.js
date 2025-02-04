@@ -5,6 +5,7 @@ import BookSection from "./components/BookSection";
 import Book from "./pages/Book";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { AuthProvider } from "./hooks/AuthContext";
 import "./style.css";
 
 function App() {
@@ -18,8 +19,13 @@ function App() {
           path="/"
           element={
             <>
-              <Navbar setSearchQuery={setSearchQuery} setFilters={setFilters} />
-              <BookSection searchQuery={searchQuery} filters={filters} />
+              <AuthProvider>
+                <Navbar
+                  setSearchQuery={setSearchQuery}
+                  setFilters={setFilters}
+                />
+                <BookSection searchQuery={searchQuery} filters={filters} />
+              </AuthProvider>
             </>
           }
         />
