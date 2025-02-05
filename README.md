@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Books Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based web application that allows users to search for books using the Google Books API, apply filters, authenticate via a login form, unlock their account after registration, and manage favorite books.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [API Endpoints](#api-endpoints)
+- [Usage Steps](#usage-steps)
+- [Running the Application](#running-the-application)
+- [Testing](#testing)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Book Search:** Search for books using the Google Books API.
+- **Filters:** Filter books by genre, language, and book type.
+- **Authentication:** Users can register, unlock their accounts via email confirmation, and log in.
+- **Favorite Books:** Users can add and view favorite books on the "Favorite Books" page.
+- **Protected Routes:** Only logged-in users can add/view favorite books.
+- **Custom Backend:** The app interacts with a custom backend for user authentication and favorite book management.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend:** React 19, React Router, React Bootstrap
+- **State Management & API Calls:** `@tanstack/react-query`, `axios`
+- **Authentication:** JWT-based login (`jwt-decode`), email-based account unlocking
+- **UI Components:** `react-bootstrap`, `bootstrap`
+- **Google Books API:** Fetching books
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Endpoints for user authentication (Custom Backend)
+- check repositories
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage Steps
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Register a New User:**
+   - Fill out the registration form.
+   - A confirmation email will be sent to the registered email address.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Confirm Email:**
+   - Click on the confirmation link in the email to unlock your account.
 
-## Learn More
+3. **User Login:**
+   - Log in with your credentials.
+   - Receive a JWT token for authentication.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Search for Books:**
+   - Use the search bar to find books.
+   - Apply filters like genre, language, and book type.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. **Add a Favorite Book:**
+   - Click the "star" button.
+   - Only available to logged-in users.
 
-### Code Splitting
+6. **View Favorite Books:**
+   - Navigate to the "Favorite Books" page to see saved books.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+7. **Remove a Favorite Book:**
+   - Click the "star" button on a saved book to remove it from saved books.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Testing
+- APIs tested using Postman.
+- Ensure authentication, book search, and favorite book management work as expected.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
