@@ -28,6 +28,18 @@ height: 90vh;
   filter: invert(100%); 
 }
 
+.starIcon{
+  height: 25px;
+}
+
+.starIcon:hover{
+  cursor: pointer;
+}
+
+.list-group-item{
+  background-color: #242331;
+}
+
 .filtersButton{
   border-radius: 0;
   border: none !important;

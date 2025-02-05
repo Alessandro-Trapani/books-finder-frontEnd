@@ -1,12 +1,17 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import getBooks from "../apis/getBooks";
-
+import emptyStar from "../assets/star.png";
+import fullStar from "../assets/starFull.png";
 import coverNotFound from "../assets/coverNotFound.jpg";
-
+import addFavouriteBook from "../apis/addFavouriteBook";
+import removeFromFavourite from "../apis/removeFromFavourite";
 import { useNavigate } from "react-router-dom";
+import getFavouriteBook from "../apis/getFavoureiteBooks";
 
 export default function BookSection({ searchQuery, filters }) {
+  const [favouriteBooks, setFavouriteBooks] = useState([]);
+
   const {
     data,
     isLoading,
@@ -31,6 +36,22 @@ export default function BookSection({ searchQuery, filters }) {
     },
     enabled: !!searchQuery,
   });
+
+  function includes(array, value) {
+    return array.includes(value);
+  }
+
+  useEffect(() => {
+    async function fetchFavouriteBooks() {
+      try {
+        const books = await getFavouriteBook();
+        setFavouriteBooks(books.books || []);
+      } catch (error) {
+        console.error("Error fetching favourite books:", error);
+      }
+    }
+    fetchFavouriteBooks();
+  }, []);
 
   const navigate = useNavigate();
 
@@ -90,6 +111,7 @@ export default function BookSection({ searchQuery, filters }) {
 
             return (
               <div
+                key={book.id}
                 className="card"
                 onClick={() => handleCardClick(book.id)}
                 ref={isLastItem ? lastBookRef : null}
@@ -104,6 +126,28 @@ export default function BookSection({ searchQuery, filters }) {
                     ? book.volumeInfo.title.substring(0, 50) + "..."
                     : book.volumeInfo.title}
                 </strong>
+                <div>
+                  <img
+                    onClick={(e) => {
+                      e.stopPropagation();
+
+                      if (includes(favouriteBooks, book.id)) {
+                        removeFromFavourite(book.id);
+                        setFavouriteBooks(
+                          favouriteBooks.filter((id) => id !== book.id)
+                        );
+                      } else {
+                        setFavouriteBooks([...favouriteBooks, book.id]);
+                        addFavouriteBook(book.id);
+                      }
+                    }}
+                    className="starIcon"
+                    src={
+                      includes(favouriteBooks, book.id) ? fullStar : emptyStar
+                    }
+                    alt="Favourite"
+                  />
+                </div>
               </div>
             );
           });

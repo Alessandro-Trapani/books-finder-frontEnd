@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import searchIcon from "../assets/detective.png";
 import LoginForm from "./LoginForm";
+import { useAuth } from "../hooks/AuthContext";
 
 export default function Navbar({ setSearchQuery, setFilters }) {
   const [query, setQuery] = useState("");
@@ -10,6 +11,8 @@ export default function Navbar({ setSearchQuery, setFilters }) {
     bookType: "",
     language: "",
   });
+
+  const { jwt } = useAuth();
 
   const handleSearch = () => {
     setSearchQuery(query);
@@ -75,7 +78,7 @@ export default function Navbar({ setSearchQuery, setFilters }) {
           >
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-                Login
+                {jwt.firstName > "" ? "Welcome" : "Login"}
               </h5>
               <button
                 type="button"

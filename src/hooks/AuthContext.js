@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
 
   const saveJwt = (token) => {
     setJwt(token);
-    localStorage.setItem("jwt", token); // Persist token across reloads
+    localStorage.setItem("jwt", JSON.stringify(token));
   };
 
   const clearJwt = () => {

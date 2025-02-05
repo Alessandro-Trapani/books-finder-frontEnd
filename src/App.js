@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { AuthProvider } from "./hooks/AuthContext";
 import "./style.css";
+import FavouriteBooks from "./pages/FavouriteBooks";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -31,6 +32,14 @@ function App() {
         />
 
         <Route path="/book/:id" element={<Book />} />
+        <Route
+          path="/myBooks"
+          element={
+            <AuthProvider>
+              <FavouriteBooks />
+            </AuthProvider>
+          }
+        />
       </Routes>
     </Router>
   );
