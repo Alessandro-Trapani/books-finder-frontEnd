@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/books-search-app/static/css/main.c0884793.css",
-    "main.js": "/books-search-app/static/js/main.1e67fec8.js",
+    "main.js": "/books-search-app/static/js/main.a04b4374.js",
     "static/js/488.8e98c12b.chunk.js": "/books-search-app/static/js/488.8e98c12b.chunk.js",
     "static/media/coverNotFound.jpg": "/books-search-app/static/media/coverNotFound.69846940c7af3e651508.jpg",
     "static/media/detective.png": "/books-search-app/static/media/detective.7da30e3dba36e4b8e865.png",
@@ -9,11 +9,11 @@
     "static/media/starFull.png": "/books-search-app/static/media/starFull.d0cbd94e0a4a62fc2bf4.png",
     "index.html": "/books-search-app/index.html",
     "main.c0884793.css.map": "/books-search-app/static/css/main.c0884793.css.map",
-    "main.1e67fec8.js.map": "/books-search-app/static/js/main.1e67fec8.js.map",
+    "main.a04b4374.js.map": "/books-search-app/static/js/main.a04b4374.js.map",
     "488.8e98c12b.chunk.js.map": "/books-search-app/static/js/488.8e98c12b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c0884793.css",
-    "static/js/main.1e67fec8.js"
+    "static/js/main.a04b4374.js"
   ]
 }
