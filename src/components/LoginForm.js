@@ -122,7 +122,7 @@ function LoginForm() {
                 </div>
               </>
             )}
-            <span style={{ color: "red" }}>
+            <span style={{ color: "red", border: "1px solid red" }}>
               This form will not work since the backend is not currently hosted
               anywhere
             </span>
