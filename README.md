@@ -3,6 +3,7 @@
 A React-based web application that allows users to search for books using the Google Books API, apply filters, authenticate via a login form, unlock their account after registration, and manage favorite books.
 
 ---
+Check it out at : https://alessandro-trapani.github.io/books-finder-frontend/
 
 ## Table of Contents
 
