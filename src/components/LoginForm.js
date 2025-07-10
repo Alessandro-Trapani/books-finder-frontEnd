@@ -122,6 +122,10 @@ function LoginForm() {
                 </div>
               </>
             )}
+            <span style={{ color: "red" }}>
+              This form will not work since the backend is not currently hosted
+              anywhere
+            </span>
 
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
